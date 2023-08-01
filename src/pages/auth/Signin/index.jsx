@@ -4,11 +4,9 @@ import Link from "next/link";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useToast } from "../../../components/ui/use-toast";
 import { LoginSchema } from "@/utils/schema";
 
 const index = () => {
-  const { toast } = useToast();
   const session = useSession();
   const form = useForm({
     resolver: yupResolver(LoginSchema),
@@ -153,7 +151,7 @@ const index = () => {
 
                 <p className="account">
                   I don't have an account?{" "}
-                  <Link className="account-link" href="/auth/Signup">
+                  <Link className="account-link" href="/auth/signup">
                     Sign up
                   </Link>
                 </p>

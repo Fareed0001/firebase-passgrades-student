@@ -2,13 +2,11 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useToast } from "../../../components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
 
 const Index = () => {
-  const { toast } = useToast();
   const router = useRouter();
   const {
     register,
@@ -57,16 +55,16 @@ const Index = () => {
       const data = await response.json();
       console.log();
 
-      toast({
-        title: "Account Created",
-        description: `Sucessfully Created an Account`,
-      });
+      // toast({
+      //   title: "Account Created",
+      //   description: `Sucessfully Created an Account`,
+      // });
       router.push("/auth/Signin");
     } catch (error) {
-      toast({
-        title: "Error",
-        description: `Student Already Exists`,
-      });
+      // toast({
+      //   title: "Error",
+      //   description: `Student Already Exists`,
+      // });
       console.error(error);
     }
   };
